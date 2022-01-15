@@ -5,14 +5,29 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
+env:
+  REGISTRY: hub.docker.com
+  IMAGE_NAME: svetvel/mecho
+  USERNAME: svetvel 
+  PASSWORD: aa
 jobs:
 
   build:
 
     runs-on: ubuntu-latest
-
+    
     steps:
+    - name: Log in to the Container registry
+      uses: docker/login-action@v2
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: svetvel
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
     - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        push: true
+        tags: anna
+        labels: Anna
