@@ -29,5 +29,5 @@ jobs:
       with:
         context: .
         push: true
-        tags: anna
+        tags: ${{ IMAGE_NAME }}:latest
         labels: Anna
