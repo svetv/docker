@@ -23,7 +23,7 @@ jobs:
         registry: ${{ env.REGISTRY }}
         username: svetvel
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
-    - uses: actions/checkout@v2
+
     - name: Build and push Docker images
       uses: docker/build-push-action@v2
       with:
