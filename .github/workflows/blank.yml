@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ master ]
 env:
-  REGISTRY: hub.docker.com
+  REGISTRY: registry.hub.docker.com
   IMAGE_NAME: svetvel/mecho
   USERNAME: svetvel 
   PASSWORD: aa
