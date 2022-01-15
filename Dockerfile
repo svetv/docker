@@ -2,9 +2,8 @@
 # Super simple example of a Dockerfile
 #
 
-FROM ubuntu:latest
-MAINTAINER Andrew Odewahn "odewahn@oreilly.com"
-
+FROM busybox:latest
+MAINTAINER None
 
 ENTRYPOINT tail -f /etc/passwd
 
